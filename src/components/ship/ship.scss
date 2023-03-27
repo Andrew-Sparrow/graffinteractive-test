@@ -1,0 +1,14 @@
+@import "../../variables.scss";
+
+.ship {
+  width: 384px;
+  min-height: 153px;
+  background-color: $dark-gray-bg;
+  border-radius: 8px;
+  margin-bottom: 8px;
+
+  &__title {
+    font-weight: 500;
+    font-size: 22px;
+  }
+}

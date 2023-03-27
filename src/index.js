@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 
-import './index.css';
-import App from './components/app/App';
+import './index.scss';
+import App from './components/app/app';
 import rootReducer from './store/root-reducer';
 import { getAxiosInstance } from './services/api';
 
