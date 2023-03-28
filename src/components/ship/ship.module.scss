@@ -6,9 +6,19 @@
   background-color: $dark-gray-bg;
   border-radius: 8px;
   margin-bottom: 8px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
 
   &__title {
     font-weight: 500;
     font-size: 22px;
+  }
+
+  &__detail {
+    display: inline-block;
+    width: 40px;
+    margin-right: 24px;
   }
 }
