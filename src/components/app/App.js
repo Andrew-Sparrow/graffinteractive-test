@@ -1,7 +1,7 @@
 import styles from './app.module.scss';
 import { Ship } from '../ship/ship';
 import { Filters } from '../filters/filters';
-import { ButtonFilter } from '../button-filter/button-filter';
+import { ButtonFilterContainer } from '../button-filter-container/button-filter-container';
 import { useState } from 'react';
 
 
@@ -15,7 +15,7 @@ const App = () => {
   return (
     <div className={styles.app}>
       <h1 className={styles.title}>SpaceX Ships</h1>
-      <ButtonFilter onClick={handleButtonFilterClick} />
+      <ButtonFilterContainer isFilterOpen={isFilterOpen} onClick={handleButtonFilterClick} />
       {
         isFilterOpen && <Filters />
       }
