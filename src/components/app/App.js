@@ -12,7 +12,6 @@ const App = () => {
     setIsFilterOpen((prev) => !prev);
   }
 
-  console.log(styles)
   return (
     <div className={styles.app}>
       <h1 className={styles.title}>SpaceX Ships</h1>
