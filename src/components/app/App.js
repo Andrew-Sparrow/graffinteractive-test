@@ -17,7 +17,7 @@ const App = () => {
       <h1 className={styles.title}>SpaceX Ships</h1>
       <ButtonFilterContainer isFilterOpen={isFilterOpen} onClick={handleButtonFilterClick} />
       {
-        isFilterOpen && <Filters />
+        isFilterOpen && <Filters onClick={handleButtonFilterClick} />
       }
       <main className={styles.main}>
         {[1, 2].map((item, index) => <Ship key={index} />)}

@@ -7,4 +7,28 @@
   min-height: 658px;
   padding-left: 8px;
   padding-right: 8px;
+  padding-top: 32px;
+}
+
+.button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  background-color: $dark-gray-bg;
+  border: none;
+  margin-right: 8px;
+}
+
+.title_container {
+  display: flex;
+  width: 143px;
+  align-items: center;
+}
+
+.title {
+  width: 103px;
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  margin: 0;
 }
