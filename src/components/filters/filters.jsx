@@ -1,21 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
+
+import styles from './filters.module.scss';
 
 
 const Filters = () => {
-  const [isClicked, setIsClicked] = useState(false);
-
-  const handleClick = (evt) => {
-    setIsClicked((prev) => !prev);
-  }
-
   return (
-    <>
-      <button className='button' type="button" onClick={handleClick}>Фильтры</button>
-      {
-        isClicked && <aside>filters</aside>
-      }
-    </>
+    <aside className={styles.filters} >
+      filters
+    </aside>
   )
-}
+};
 
 export { Filters };

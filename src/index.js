@@ -4,7 +4,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 
 import './index.scss';
-import App from './components/app/app';
+import { App } from './components/app/app';
 import rootReducer from './store/root-reducer';
 import { getAxiosInstance } from './services/api';
 

@@ -1,0 +1,10 @@
+@import "../../variables.scss";
+
+.filters {
+  width: 320px;
+  color: $white;
+  background-color: $dark-gray-bg;
+  min-height: 658px;
+  padding-left: 8px;
+  padding-right: 8px;
+}

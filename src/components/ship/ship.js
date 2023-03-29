@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ship.module.scss';
 
-function Ship() {
+const Ship = () => {
   return (
     <div className={styles.ship}>
       <h2 className={styles.ship__title}> Ship title</h2>
