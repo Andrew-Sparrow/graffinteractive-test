@@ -1,14 +1,14 @@
 import styles from './app.module.scss';
 import { Ship } from '../ship/ship';
+import { Filters } from '../filters/filters';
 
 
 function App() {
   return (
     <div className={styles.app}>
       <h1>SpaceX Ships</h1>
-      <button className='filters'>Фильтры</button>
-      <aside>filters</aside>
       <main className='main'>
+        <Filters />
         {[1, 2].map((item, index) => <Ship key={index}/>)}
       </main>
     </div>
