@@ -18,12 +18,14 @@ const Filters = ({ onClick }) => {
   return (
     <aside className={styles.filters} >
       <div className={styles.title_container}>
-        <IconArrowLeft onClick={onClick}/>
+        <IconArrowLeft onClick={onClick} />
         <h2 className={styles.title}>Фильтры</h2>
       </div>
       <section className={styles.filters_box}>
         <label className={styles.label} htmlFor="name">Название</label>
-        <input className={styles.input} type="text" id="name" />
+        <div className={styles.input_wrapper}>
+          <input className={styles.input} type="text" id="name" />
+        </div>
       </section>
     </aside>
   )

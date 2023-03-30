@@ -57,4 +57,24 @@
   padding-right: 10px;
   box-sizing: border-box;
   border-radius: 4px;
+  transition: all 0.5s ease-out;
+}
+
+.input:focus {
+  border-image-source: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 0, 51, 0.5));
+  border-width: 5pt;
+  border-image-slice: 1;
+}
+
+.input_wrapper {
+  width: 306px;
+  position: relative;
+  padding: 1px;
+  transition: all 0.5s ease-out;
+  border-radius: 5px;
+  height: 48px;
+}
+
+.input_wrapper:focus-within {
+   background: linear-gradient(to bottom, $color-gradient-first, $color-gradient-second);
 }
