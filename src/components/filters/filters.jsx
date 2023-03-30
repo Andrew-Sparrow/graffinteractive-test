@@ -21,6 +21,10 @@ const Filters = ({ onClick }) => {
         <IconArrowLeft onClick={onClick}/>
         <h2 className={styles.title}>Фильтры</h2>
       </div>
+      <section className={styles.filters_box}>
+        <label className={styles.label} htmlFor="name">Название</label>
+        <input className={styles.input} type="text" id="name" />
+      </section>
     </aside>
   )
 };

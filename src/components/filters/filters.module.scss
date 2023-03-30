@@ -8,6 +8,7 @@
   padding-left: 8px;
   padding-right: 8px;
   padding-top: 32px;
+  margin-bottom: 27px;
 }
 
 .button {
@@ -23,6 +24,7 @@
   display: flex;
   width: 143px;
   align-items: center;
+  margin-bottom: 24px;
 }
 
 .title {
@@ -31,4 +33,28 @@
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   margin: 0;
+}
+
+.filters_box {
+  border: none;
+}
+
+.label {
+  width: 66px;
+  color: $color-label;
+  margin-bottom: 4px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.input {
+  all: unset;
+  background-color: $light-gray-bg;
+  width: 304px;
+  height: 46px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  border-radius: 4px;
 }
