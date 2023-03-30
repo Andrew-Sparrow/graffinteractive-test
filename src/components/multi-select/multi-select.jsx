@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-import styles from './multi-select.module.scss';
+import  multiSelectStyles from './multi-select.module.scss';
+import  filterStyles from '../filters/filters.module.scss';
 import { OutsideAlerter } from '../outside-alerter/outside-alerter';
 
 const options = [
@@ -22,13 +23,13 @@ const MultiSelect = () => {
 
   return (
     <>
-      <label className={styles.label} htmlFor="port">Порт</label>
+      <label className={filterStyles.label} htmlFor="port">Порт</label>
       <OutsideAlerter onClickSelectHandle={onClickOutsideHandler}>
-        <div className={styles.select_wrapper} >
-          <div className={styles.select} tabIndex="1" onClick={onClickSelectHandler} id="port" />
+        <div className={multiSelectStyles.select_wrapper} >
+          <div className={multiSelectStyles.select} tabIndex="1" onClick={onClickSelectHandler} id="port" />
           {
             isSelectActive &&
-            <div className={styles.menu}>
+            <div className={multiSelectStyles.menu}>
               {options.map((item, index) => <p key={index}>{item.label}</p>)}
             </div>
           }
