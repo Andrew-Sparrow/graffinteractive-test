@@ -12,16 +12,20 @@ const options = [
 const MultiSelect = () => {
   const [isSelectActive, setIsSelectActive] = useState(false);
 
-  const onClickSelectHandle = (evt) => {
+  const onClickSelectHandler = (evt) => {
     setIsSelectActive((prev) => !prev);
   };
+
+  const onClickOutsideHandler = () => {
+    setIsSelectActive(false);
+  }
 
   return (
     <>
       <label className={styles.label} htmlFor="port">Порт</label>
-      <OutsideAlerter onClickSelectHandle={onClickSelectHandle}>
+      <OutsideAlerter onClickSelectHandle={onClickOutsideHandler}>
         <div className={styles.select_wrapper} >
-          <div className={styles.select} tabIndex="1" onClick={onClickSelectHandle} id="port" />
+          <div className={styles.select} tabIndex="1" onClick={onClickSelectHandler} id="port" />
           {
             isSelectActive &&
             <div className={styles.menu}>
