@@ -9,22 +9,36 @@
   height: 48px;
   margin-bottom: 32px;
   outline: none;
+  z-index: 200;
 }
 
 .select {
-  background-color: $light-gray-bg;
+  box-sizing: border-box;
   width: 304px;
-  height: 46px;
+  min-height: 46px;
   padding-left: 10px;
   padding-right: 10px;
-  box-sizing: border-box;
   border-radius: 4px;
   transition: all 0.5s ease-out;
   outline: none;
+  background-color: $light-gray-bg;
+  font-size: 16px;
+  line-height: 22px;
 }
 
-
-
 .select_wrapper:focus-within {
-   background: linear-gradient(to bottom, $color-gradient-first, $color-gradient-second);
+  background: linear-gradient(to bottom, $color-gradient-first, $color-gradient-second);
+}
+
+.menu {
+  box-sizing: border-box;
+  width: 304px;
+  padding-left: 12px;
+  padding-right: 12px;
+  transition: all 0.5s ease-out;
+  outline: none;
+  background-color: $light-gray-bg;
+  top: 46px;
+  position: absolute;
+  z-index: 100;
 }
