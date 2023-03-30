@@ -23,7 +23,9 @@
   outline: none;
   background-color: $light-gray-bg;
   font-size: 16px;
-  line-height: 22px;
+  line-height: 46px;
+  top: -16px;
+  position: relative;
 }
 
 .select_wrapper:focus-within {
@@ -31,6 +33,7 @@
 }
 
 .menu {
+  position: absolute;
   box-sizing: border-box;
   width: 304px;
   padding-left: 12px;
@@ -38,7 +41,6 @@
   transition: all 0.5s ease-out;
   outline: none;
   background-color: $light-gray-bg;
-  top: 46px;
-  position: absolute;
+  top: 48px;
   z-index: 100;
 }

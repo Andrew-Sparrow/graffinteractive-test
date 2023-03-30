@@ -26,7 +26,9 @@ const MultiSelect = () => {
       <label className={filterStyles.label} htmlFor="port">Порт</label>
       <OutsideAlerter onClickSelectHandle={onClickOutsideHandler}>
         <div className={multiSelectStyles.select_wrapper} >
-          <div className={multiSelectStyles.select} tabIndex="1" onClick={onClickSelectHandler} id="port" />
+          <div className={multiSelectStyles.select} tabIndex="1" onClick={onClickSelectHandler} id="port" >
+            <p>Выбрано <span>{1}</span></p>
+          </div>
           {
             isSelectActive &&
             <div className={multiSelectStyles.menu}>
