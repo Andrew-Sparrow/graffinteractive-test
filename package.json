@@ -37,6 +37,7 @@
     ]
   },
   "devDependencies": {
+    "@radix-ui/react-radio-group": "^1.1.2",
     "@reduxjs/toolkit": "^1.9.3",
     "gh-pages": "^5.0.0",
     "handy-svg": "^1.0.8",
