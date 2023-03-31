@@ -10,7 +10,7 @@ const App = () => {
 
   const handleButtonFilterClick = (evt) => {
     setIsFilterOpen((prev) => !prev);
-  }
+  };
 
   return (
     <div className={styles.app}>

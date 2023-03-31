@@ -4,7 +4,7 @@ import { HandySvg } from 'handy-svg';
 import styles from './filters.module.scss';
 import iconArrowLeftSVG from '../../img/icons/Arrow_Left.svg';
 import { MultiSelect } from '../multi-select/multi-select';
-
+import { RadioBlock } from '../radio-block/radio-block.jsx';
 
 const IconArrowLeft = ({ onClick }) => (
   <HandySvg
@@ -29,6 +29,7 @@ const Filters = ({ onClick }) => {
           <input className={styles.input} type="text" id="name" />
         </div>
         <MultiSelect />
+        <RadioBlock />
       </section>
     </aside>
   )
