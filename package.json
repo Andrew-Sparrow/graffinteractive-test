@@ -37,11 +37,13 @@
     ]
   },
   "devDependencies": {
+    "@radix-ui/react-radio-group": "^1.1.2",
     "@reduxjs/toolkit": "^1.9.3",
     "gh-pages": "^5.0.0",
     "handy-svg": "^1.0.8",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.9.0",
+    "react-select": "^5.7.2",
     "redux-devtools-extension": "^2.13.9",
     "sass": "^1.60.0",
     "styled-components": "^5.3.9"

@@ -5,6 +5,9 @@ import styles from './filters.module.scss';
 import iconArrowLeftSVG from '../../img/icons/Arrow_Left.svg';
 import { MultiSelect } from '../multi-select/multi-select';
 
+import { FilterSelect } from '../filter-select/filter-select';
+
+
 const IconArrowLeft = ({ onClick }) => (
   <HandySvg
     className={styles.button}
@@ -28,6 +31,8 @@ const Filters = ({ onClick }) => {
           <input className={styles.input} type="text" id="name" />
         </div>
         <MultiSelect />
+        <label className={styles.label} htmlFor="name">Порт</label>
+        <FilterSelect />
       </section>
     </aside>
   )
