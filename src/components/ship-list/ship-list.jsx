@@ -20,7 +20,13 @@ const ShipList = () => {
   return (
     <ul className={styles.list}>
       {
-        ships.map((ship) => <Ship key={ship.id} />)
+        ships.map((ship) =>
+        <Ship
+          key={ship.id}
+          type={ship.type}
+          name={ship.name}
+          port={ship.home_port}
+        />)
       }
     </ul>
   )
