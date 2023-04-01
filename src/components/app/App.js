@@ -4,9 +4,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import styles from './app.module.scss';
 import { Filters } from '../filters/filters';
 import { ButtonFilterContainer } from '../button-filter-container/button-filter-container';
-import { ShipList } from '../ship-list/ship-list';
 import { getShips } from '../../store/ships/selectors';
 import { setFilteredShips } from '../../store/actions';
+import { PaginatedItems } from '../paginated-items/paginated-items';
 
 const App = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -47,7 +47,7 @@ const App = () => {
           />
       }
       <main className={styles.main}>
-        <ShipList />
+        <PaginatedItems />
       </main>
     </div>
   );
