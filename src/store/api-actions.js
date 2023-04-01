@@ -11,5 +11,3 @@ export const fetchShipsList = () => (dispatch, _getState, api) => (
     })
     .catch((err) => {})
 );
-
-
