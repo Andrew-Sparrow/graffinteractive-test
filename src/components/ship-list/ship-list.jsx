@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { getShips, getIsDataLoaded } from '../../store/ships/selectors';
 import { Ship } from '../ship/ship';
 import { LoadingScreen } from '../loading-screen/loading-screen';
-
+import styles from './ship-list.module.scss';
 
 const ShipList = () => {
   const isDataLoaded = useSelector(getIsDataLoaded);
@@ -18,7 +18,7 @@ const ShipList = () => {
   }
 
   return (
-    <ul>
+    <ul className={styles.list}>
       {
         ships.map((ship) => <Ship key={ship.id} />)
       }
