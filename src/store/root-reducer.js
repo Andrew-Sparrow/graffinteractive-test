@@ -2,9 +2,9 @@ import { combineReducers } from 'redux';
 import { ships } from './ships/ships';
 
 export const NameSpace = {
-  SHIP: 'SHIP',
+  SHIPS: 'SHIPS',
 };
 
 export default combineReducers({
-  [NameSpace.SHIP]: ships,
+  [NameSpace.SHIPS]: ships,
 });

@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const BACKEND_URL = 'https://7.react.pages.academy/six-cities';
+const BACKEND_URL = 'https://api.spacexdata.com/v4/';
+
 const REQUEST_TIMEOUT = 5000;
 
 
