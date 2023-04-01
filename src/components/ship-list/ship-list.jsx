@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import {
@@ -13,11 +13,13 @@ const ShipList = () => {
   const isDataLoaded = useSelector(getIsDataLoaded);
   const filteredShips = useSelector(getFilteredShips);
 
+  useEffect(() => {});
+
   if (!isDataLoaded) {
     return (
       <LoadingScreen />
     );
-  }
+  };
 
   return (
     <ul className={styles.list}>
