@@ -1,15 +1,13 @@
 import {
-  loadPlaces,
+  loadShips,
 } from './actions';
 
-import {APIRoute} from '../const';
-import Util from '../util/util';
+import { APIRoute } from '../const';
 
-export const fetchPlacesList = () => (dispatch, _getState, api) => (
-  api.get(APIRoute.HOTELS)
-    .then(({data}) => {
-      const adaptedPlacesToClient = Util.adaptPlacesToClient(data);
-      dispatch(loadPlaces(adaptedPlacesToClient));
+export const fetchShipsList = () => (dispatch, _getState, api) => (
+  api.get(APIRoute.SHIPS)
+    .then(({ data }) => {
+      dispatch(loadShips(data));
     })
     .catch((err) => {})
 );

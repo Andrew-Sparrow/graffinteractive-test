@@ -7,6 +7,7 @@ import './index.scss';
 import { App } from './components/app/app';
 import rootReducer from './store/root-reducer';
 import { getAxiosInstance } from './services/api';
+import { fetchShipsList } from './store/api-actions';
 
 
 const api = getAxiosInstance();
@@ -21,6 +22,7 @@ const store = configureStore({
     })
 });
 
+store.dispatch(fetchShipsList());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

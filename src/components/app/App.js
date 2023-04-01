@@ -1,9 +1,9 @@
-import styles from './app.module.scss';
-import { Ship } from '../ship/ship';
-import { Filters } from '../filters/filters';
-import { ButtonFilterContainer } from '../button-filter-container/button-filter-container';
 import { useState } from 'react';
 
+import styles from './app.module.scss';
+import { Filters } from '../filters/filters';
+import { ButtonFilterContainer } from '../button-filter-container/button-filter-container';
+import { ShipList } from '../ship-list/ship-list';
 
 const App = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -23,7 +23,7 @@ const App = () => {
         <ButtonFilterContainer isFilterOpen={isFilterOpen} onClick={handleButtonFilterClick} />
       }
       <main className={styles.main}>
-        {[1, 2].map((item, index) => <Ship key={index} />)}
+        <ShipList />
       </main>
     </div>
   );
