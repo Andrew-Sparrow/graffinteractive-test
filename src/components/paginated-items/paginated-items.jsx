@@ -11,18 +11,20 @@ const ITEMS_PER_PAGE = 5;
 
 const PaginatedItems = () => {
 
-  const [currentItems, setCurrentItems] = useState(null);
+  const items = useSelector(getFilteredShips);
+
+  const [currentItemsOnPage, setCurrentItemsOnPage] = useState(items);
   const [pageCount, setPageCount] = useState(0);
 
   const [itemOffset, setItemOffset] = useState(0);
 
-  const items = useSelector(getFilteredShips);
-
   useEffect(() => {
+    setCurrentItemsOnPage(items);
     const endOffset = itemOffset + ITEMS_PER_PAGE;
-    setCurrentItems(items.slice(itemOffset, endOffset));
+    setCurrentItemsOnPage(items.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(items.length / ITEMS_PER_PAGE));
-  }, [itemOffset]);
+  }, [items, itemOffset]);
+
 
   const handlePageClick = (event) => {
     const newOffset = event.selected * (ITEMS_PER_PAGE % items.length);
@@ -31,27 +33,29 @@ const PaginatedItems = () => {
 
   return (
     <>
-      <ShipList currentItems={currentItems} />
-      <ReactPaginate
-        nextLabel="next >"
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={3}
-        marginPagesDisplayed={2}
-        pageCount={pageCount}
-        previousLabel="< previous"
-        pageClassName="page-item"
-        pageLinkClassName="page-link"
-        previousClassName="page-item"
-        previousLinkClassName="page-link"
-        nextClassName="page-item"
-        nextLinkClassName="page-link"
-        breakLabel="..."
-        breakClassName="page-item"
-        breakLinkClassName="page-link"
-        containerClassName="pagination"
-        activeClassName="active"
-        renderOnZeroPageCount={null}
-      />
+      <ShipList currentItems={currentItemsOnPage} />
+      {items.length > ITEMS_PER_PAGE &&
+        <ReactPaginate
+          nextLabel=">"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={3}
+          marginPagesDisplayed={2}
+          pageCount={pageCount}
+          previousLabel="<"
+          pageClassName="page-item"
+          pageLinkClassName="page-link"
+          previousClassName="page-item"
+          previousLinkClassName="page-link"
+          nextClassName="page-item"
+          nextLinkClassName="page-link"
+          breakLabel="..."
+          breakClassName="page-item"
+          breakLinkClassName="page-link"
+          containerClassName="pagination"
+          activeClassName="active"
+          renderOnZeroPageCount={null}
+        />
+      }
     </>
   );
 };

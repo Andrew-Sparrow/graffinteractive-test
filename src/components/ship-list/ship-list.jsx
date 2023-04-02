@@ -19,7 +19,7 @@ const ShipList = ({ currentItems }) => {
   return (
     <ul className={styles.list}>
       {
-        currentItems?.map((ship) =>
+        currentItems && currentItems.map((ship) =>
           <Ship
             key={ship.id}
             type={ship.type}
