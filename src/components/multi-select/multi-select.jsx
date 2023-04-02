@@ -67,14 +67,18 @@ const MultiSelect = () => {
             isSelectOpen &&
             <div className={multiSelectStyles.menu}>
                 {options.map((item, index) =>
-                  <p key={index} onClick={() => onSelectedItemClick(item.value)}>
+                  <p
+                    key={index}
+                    onClick={() => onSelectedItemClick(item.value)}
+                    className={multiSelectStyles.menu__item}
+                  >
                     {isSelected(item.value)
                       ?
                       <IconCheckBoxYes />
                       :
                       <IconCheckBoxNo />
                      }
-                    {item.label}
+                    <span className={multiSelectStyles.label}>{item.label}</span>
                   </p>)
                 }
             </div>
