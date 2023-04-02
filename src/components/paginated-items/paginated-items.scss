@@ -1,3 +1,6 @@
+@import "../../styles/variables.scss";
+
+
 .pagination {
   display: flex;
   list-style: none;
@@ -6,8 +9,7 @@
 }
 
 .pagination>.active>a {
-  background-color: #4481c3;
-  border-color: #4481c3;
+  background-color: transparent;
   color: #fff;
 }
 
@@ -63,13 +65,14 @@
 
 .pagination>.previous.disabled>a,
 .pagination>.next.disabled>a {
-  color: #dfdfdf;
+  color: #868383;
   cursor: default;
 }
 
 .pagination>.previous.disabled>a:hover,
 .pagination>.next.disabled>a:hover {
-  color: #dfdfdf;
-  background-color: #fff;
+  color: #868383;
+  background-color: transparent;
   cursor: default;
 }
+

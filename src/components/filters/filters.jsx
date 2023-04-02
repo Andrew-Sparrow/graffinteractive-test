@@ -30,7 +30,7 @@ const Filters = (props) => {
         <label className={styles.label} htmlFor="name">Название</label>
         <div className={styles.input_wrapper}>
           <input
-            className={styles.input}
+            className={styles.input} // TODO add styles for active and inactive state for string style
             type="text"
             id="name"
             onChange={handleChangeInputShipName}

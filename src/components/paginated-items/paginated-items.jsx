@@ -2,9 +2,32 @@ import { useState, useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
 import { useSelector } from 'react-redux';
 import { getFilteredShips } from '../../store/ships/selectors';
+import { HandySvg } from 'handy-svg';
+
 
 import { ShipList } from '../ship-list/ship-list';
 import './paginated-items.scss';
+import iconChevronLeftSVG from '../../img/icons/Chevron_Left.svg';
+import iconChevronRightSVG from '../../img/icons/Chevron_Right.svg';
+
+
+const IconChevronLeft = () => (
+  <HandySvg
+    className="prev-icon"
+    src={iconChevronLeftSVG}
+    width="24"
+    height="24"
+  />
+);
+
+const IconChevronRight = () => (
+  <HandySvg
+    className="next-icon"
+    src={iconChevronRightSVG}
+    width="24"
+    height="24"
+  />
+);
 
 
 const ITEMS_PER_PAGE = 5;
@@ -36,38 +59,24 @@ const PaginatedItems = () => {
       <ShipList currentItems={currentItemsOnPage} />
       {items.length > ITEMS_PER_PAGE &&
         <ReactPaginate
-          nextLabel=">"
+          previousLabel={<IconChevronLeft/>}
+          nextLabel={<IconChevronRight />}
           onPageChange={handlePageClick}
-          pageRangeDisplayed={3}
-          marginPagesDisplayed={2}
+          containerClassName="pagination"
+          pageRangeDisplayed={0}
+          marginPagesDisplayed={0}
           pageCount={pageCount}
-          previousLabel="<"
           pageClassName="page-item"
           pageLinkClassName="page-link"
-          previousClassName="page-item"
-          previousLinkClassName="page-link"
-          nextClassName="page-item"
-          nextLinkClassName="page-link"
-          breakLabel="..."
-          breakClassName="page-item"
-          breakLinkClassName="page-link"
-          containerClassName="pagination"
+          previousClassName="previous"
+          previousLinkClassName="previous-link"
+          nextClassName="next"
+          nextLinkClassName="next-link"
           activeClassName="active"
           renderOnZeroPageCount={null}
+          disabledClassName="disabled"
+          disabledLinkClassName="disabled-link"
         />
-        // <ReactPaginate
-        //   previousLabel={'<'}
-        //   nextLabel={'>'}
-        //   breakLabel={'...'}
-        //   breakClassName={'break-me'}
-        //   pageCount={pageCount}
-        //   marginPagesDisplayed={2}
-        //   pageRangeDisplayed={3}
-        //   onPageChange={handlePageClick}
-        //   containerClassName={'pagination'}
-        //   activeClassName={'active'}
-        //   forcePage={forcePage}
-        // />
       }
     </>
   );
