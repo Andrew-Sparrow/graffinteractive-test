@@ -11,6 +11,7 @@ import iconChevronLeftSVG from '../../img/icons/Chevron_Left.svg';
 import iconChevronRightSVG from '../../img/icons/Chevron_Right.svg';
 
 
+// TODO css class names modules
 const IconChevronLeft = () => (
   <HandySvg
     className="prev-icon"
