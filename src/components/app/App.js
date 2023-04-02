@@ -16,12 +16,13 @@ const App = () => {
   const ships = useSelector(getShips);
 
   const handleChangeInputShipName = (evt) => {
-    const value = evt.target.value.toLowerCase().trim();
+    const value = evt.target.value;
     setInputValue(value);
   };
 
   useEffect(() => {
-    const filteredShips = ships.filter((ship) => ship.name.toLowerCase().includes(inputValue));
+    const formattedValue = inputValue.trim().toLowerCase()
+    const filteredShips = ships.filter((ship) => ship.name.toLowerCase().includes(formattedValue));
     dispatch(setFilteredShips(filteredShips));
   }, [inputValue]);
 

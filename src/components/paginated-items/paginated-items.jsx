@@ -55,6 +55,19 @@ const PaginatedItems = () => {
           activeClassName="active"
           renderOnZeroPageCount={null}
         />
+        // <ReactPaginate
+        //   previousLabel={'<'}
+        //   nextLabel={'>'}
+        //   breakLabel={'...'}
+        //   breakClassName={'break-me'}
+        //   pageCount={pageCount}
+        //   marginPagesDisplayed={2}
+        //   pageRangeDisplayed={3}
+        //   onPageChange={handlePageClick}
+        //   containerClassName={'pagination'}
+        //   activeClassName={'active'}
+        //   forcePage={forcePage}
+        // />
       }
     </>
   );
