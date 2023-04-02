@@ -1,8 +1,11 @@
 import React from 'react';
 
+import styles from './loading-screen.module.scss';
+
+
 function LoadingScreen() {
   return (
-    <p>Loading...</p>
+    <p className={styles.loading}>Loading...</p>
   );
 }
 
