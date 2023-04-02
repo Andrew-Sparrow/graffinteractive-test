@@ -10,9 +10,9 @@ import iconCheckBoxNoSVG from '../../img/icons/CheckBox_No.svg';
 
 
 const options = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' }
+  { value: 'Port Canaveral' },
+  { value: 'Port of Los Angeles' },
+  { value: 'Fort Lauderdale' }
 ];
 
 const IconCheckBoxYes = () => (
@@ -78,7 +78,7 @@ const MultiSelect = () => {
                       :
                       <IconCheckBoxNo />
                      }
-                    <span className={multiSelectStyles.label}>{item.label}</span>
+                    <span className={multiSelectStyles.label}>{item.value}</span>
                   </p>)
                 }
             </div>
