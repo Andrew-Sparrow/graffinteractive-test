@@ -18,7 +18,11 @@ const IconArrowLeft = ({ onClick }) => (
 );
 
 const Filters = (props) => {
-  const { onClick, handleChangeInputShipName, inputValue } = props;
+  const {
+    onClick,
+    handleChangeInputShipName,
+    handleChangeCheckedPorts,
+    inputValue } = props;
 
   return (
     <aside className={styles.filters} >
@@ -37,7 +41,7 @@ const Filters = (props) => {
             value={inputValue}
           />
         </div>
-        <MultiSelect />
+        <MultiSelect handleChangeCheckedPorts={handleChangeCheckedPorts} />
         <RadioBlock />
       </section>
     </aside>

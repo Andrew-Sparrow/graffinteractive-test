@@ -8,23 +8,37 @@ import { getShips } from '../../store/ships/selectors';
 import { setFilteredShips } from '../../store/actions';
 import { PaginatedItems } from '../paginated-items/paginated-items';
 
+const options = [
+  // { value: 'Port Canaveral' },
+  // { value: 'Port of Los Angeles' },
+  { value: 'Fort Lauderdale' }
+];
+
 const App = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [inputValue, setInputValue] = useState('');
+  const [checkedPorts, setCheckedPorts] = useState([]);
 
   const dispatch = useDispatch();
   const ships = useSelector(getShips);
 
+  // filter input value stored here to remember its value after filter rerender
   const handleChangeInputShipName = (evt) => {
     const value = evt.target.value;
     setInputValue(value);
   };
 
+  const handleChangeCheckedPorts = (evt) => {
+    console.log(evt.target);
+  };
+
   useEffect(() => {
-    const formattedValue = inputValue.trim().toLowerCase()
-    const filteredShips = ships.filter((ship) => ship.name.toLowerCase().includes(formattedValue));
+    const formattedInputValue = inputValue.trim().toLowerCase()
+    const filteredShips = ships.filter((ship) => {
+      return ship.name.toLowerCase().includes(formattedInputValue) && options.some((checkedItem) => checkedItem.value === ship.home_port);
+      });
     dispatch(setFilteredShips(filteredShips));
-  }, [inputValue]);
+  }, [inputValue, options]);
 
   const handleButtonFilterClick = (evt) => {
     setIsFilterOpen((prev) => !prev);
@@ -39,6 +53,7 @@ const App = () => {
           <Filters
             onClick={handleButtonFilterClick}
             handleChangeInputShipName={handleChangeInputShipName}
+            handleChangeCheckedPorts={handleChangeCheckedPorts}
             inputValue={inputValue}
           />
         :

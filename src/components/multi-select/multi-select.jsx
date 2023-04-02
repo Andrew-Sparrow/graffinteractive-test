@@ -31,7 +31,8 @@ const IconCheckBoxNo = () => (
   />
 );
 
-const MultiSelect = () => {
+const MultiSelect = (props) => {
+  const { handleChangeCheckedPorts } = props;
   const [isSelectOpen, setIsSelectOpen] = useState(false);
   const [selectedValues, setSelectedValues] = useState([]);
 
@@ -59,7 +60,7 @@ const MultiSelect = () => {
     <>
       <label className={filterStyles.label} htmlFor="port">Порт</label>
       <OutsideAlerter onClickSelectHandle={onClickOutsideHandler}>
-        <div className={multiSelectStyles.select_wrapper} >
+        <div className={multiSelectStyles.select_wrapper} onClick={handleChangeCheckedPorts}>
           <div className={multiSelectStyles.select} tabIndex="1" onClick={onClickSelectHandler} id="port" >
             <p>Выбрано <span>{selectedValues.length}</span></p>
           </div>
@@ -71,13 +72,14 @@ const MultiSelect = () => {
                     key={index}
                     onClick={() => onSelectedItemClick(item.value)}
                     className={multiSelectStyles.menu__item}
+                    tabIndex="2"
                   >
                     {isSelected(item.value)
                       ?
-                      <IconCheckBoxYes />
+                      <IconCheckBoxYes tabIndex="3" />
                       :
-                      <IconCheckBoxNo />
-                     }
+                      <IconCheckBoxNo tabIndex="3" />
+                    }
                     <span className={multiSelectStyles.label}>{item.value}</span>
                   </p>)
                 }
