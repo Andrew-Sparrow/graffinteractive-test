@@ -32,9 +32,11 @@ const IconCheckBoxNo = () => (
 );
 
 const MultiSelect = (props) => {
-  const { handleChangeCheckedPorts } = props;
+  const {
+    handleChangeCheckedPorts,
+    selectedShipPorts
+  } = props;
   const [isSelectOpen, setIsSelectOpen] = useState(false);
-  const [selectedValues, setSelectedValues] = useState([]);
 
   const onClickSelectHandler = (evt) => {
     setIsSelectOpen((prev) => !prev);
@@ -44,16 +46,8 @@ const MultiSelect = (props) => {
     setIsSelectOpen(false);
   };
 
-  const onSelectedItemClick = (value) => {
-    if (selectedValues.includes(value)) {
-      setSelectedValues((prev) => prev.filter((item) => item !== value));
-    } else {
-      setSelectedValues((prev) => [...prev, value]);
-    }
-  };
-
   const isSelected = (value) => {
-    return selectedValues.includes(value);
+    return selectedShipPorts.includes(value);
   };
 
   return (
@@ -62,7 +56,7 @@ const MultiSelect = (props) => {
       <OutsideAlerter onClickSelectHandle={onClickOutsideHandler}>
         <div className={multiSelectStyles.select_wrapper} onClick={handleChangeCheckedPorts}>
           <div className={multiSelectStyles.select} tabIndex="1" onClick={onClickSelectHandler} id="port" >
-            <p>Выбрано <span>{selectedValues.length}</span></p>
+            <p>Выбрано <span>{selectedShipPorts.length}</span></p>
           </div>
           {
             isSelectOpen &&
@@ -70,7 +64,7 @@ const MultiSelect = (props) => {
                 {options.map((item, index) =>
                   <p
                     key={index}
-                    onClick={() => onSelectedItemClick(item.value)}
+                    onClick={() => handleChangeCheckedPorts(item.value)}
                     className={multiSelectStyles.menu__item}
                     tabIndex="2"
                   >

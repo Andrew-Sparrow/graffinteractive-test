@@ -22,7 +22,9 @@ const Filters = (props) => {
     onClick,
     handleChangeInputShipName,
     handleChangeCheckedPorts,
-    inputValue } = props;
+    inputValue,
+    selectedShipPorts
+  } = props;
 
   return (
     <aside className={styles.filters} >
@@ -41,7 +43,10 @@ const Filters = (props) => {
             value={inputValue}
           />
         </div>
-        <MultiSelect handleChangeCheckedPorts={handleChangeCheckedPorts} />
+        <MultiSelect
+          handleChangeCheckedPorts={handleChangeCheckedPorts}
+          selectedShipPorts={selectedShipPorts}
+        />
         <RadioBlock />
       </section>
     </aside>

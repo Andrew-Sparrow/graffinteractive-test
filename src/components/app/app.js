@@ -8,11 +8,7 @@ import { getShips } from '../../store/ships/selectors';
 import { setFilteredShips } from '../../store/actions';
 import { PaginatedItems } from '../paginated-items/paginated-items';
 
-const selectedOptions = [
-  { value: 'Port Canaveral' },
-  // { value: 'Port of Los Angeles' },
-  // { value: 'Fort Lauderdale' }
-];
+const selectedOptions = [];
 
 const checkedRadio = '';
 
@@ -21,6 +17,7 @@ const App = () => {
   const [inputShipNameValue, setInputShipNameValue] = useState('');
   const [selectedShipPorts, setSelectedShipPorts] = useState(selectedOptions);
   const [checkedShipType, setCheckedShipTypes] = useState(checkedRadio);
+
 
   const dispatch = useDispatch();
   const ships = useSelector(getShips);
@@ -31,8 +28,12 @@ const App = () => {
     setInputShipNameValue(value);
   };
 
-  const handleChangeCheckedPorts = (evt) => {
-    console.log(evt.currentTarget);
+  const handleChangeCheckedPorts = (value) => {
+    if (selectedShipPorts.includes(value)) {
+      setSelectedShipPorts((prev) => prev.filter((item) => item !== value));
+    } else {
+      setSelectedShipPorts((prev) => [...prev, value]);
+    }
   };
 
   useEffect(() => {
@@ -64,6 +65,7 @@ const App = () => {
             handleChangeInputShipName={handleChangeInputShipName}
             handleChangeCheckedPorts={handleChangeCheckedPorts}
             inputValue={inputShipNameValue}
+            selectedShipPorts={selectedShipPorts}
           />
           :
           <ButtonFilterContainer
