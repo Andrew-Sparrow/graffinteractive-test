@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import styles from './app.module.scss';
+import styles from './main.module.scss';
 import { Filters } from '../filters/filters';
 import { ButtonFilterContainer } from '../button-filter-container/button-filter-container';
 import { getShips } from '../../store/ships/selectors';
@@ -10,7 +10,7 @@ import { PaginatedItems } from '../paginated-items/paginated-items';
 
 // TODO перенести логику фильтрации в store
 
-const App = () => {
+const Main = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [inputShipNameValue, setInputShipNameValue] = useState('');
   const [selectedShipPorts, setSelectedShipPorts] = useState([]);
@@ -84,4 +84,4 @@ const App = () => {
   );
 };
 
-export { App };
+export { Main as App };

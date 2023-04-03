@@ -1,6 +1,6 @@
 export const AppRoute = {
   MAIN: '/',
-  ROOM: '/ship/:id',
+  DETAILS: '/ship/:id',
 };
 
 export const APIRoute = {
