@@ -8,16 +8,12 @@ import { getShips } from '../../store/ships/selectors';
 import { setFilteredShips } from '../../store/actions';
 import { PaginatedItems } from '../paginated-items/paginated-items';
 
-const selectedOptions = [];
-
-const checkedRadio = '';
 
 const App = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [inputShipNameValue, setInputShipNameValue] = useState('');
-  const [selectedShipPorts, setSelectedShipPorts] = useState(selectedOptions);
-  const [checkedShipType, setCheckedShipTypes] = useState(checkedRadio);
-
+  const [selectedShipPorts, setSelectedShipPorts] = useState([]);
+  const [checkedShipType, setCheckedShipTypes] = useState('');
 
   const dispatch = useDispatch();
   const ships = useSelector(getShips);
@@ -37,14 +33,16 @@ const App = () => {
   };
 
   useEffect(() => {
+    console.log(selectedShipPorts)
     const isInputShipNameValueEmpty = inputShipNameValue === '';
     const isSelectedShipPortsEmpty = selectedShipPorts.length === 0;
     const isCheckedShipTypeEmpty = checkedShipType === '';
 
-    const formattedInputValue = inputShipNameValue.trim().toLowerCase()
+    const formattedInputValue = inputShipNameValue.trim().toLowerCase();
+
     const filteredShips = ships.filter((ship) => {
       return (isInputShipNameValueEmpty ? true : ship.name.toLowerCase().includes(formattedInputValue))
-        && (isSelectedShipPortsEmpty ? true : selectedShipPorts.some((checkedItem) => checkedItem.value === ship.home_port))
+        && (isSelectedShipPortsEmpty ? true : selectedShipPorts.some((checkedItem) => checkedItem === ship.home_port))
         && (isCheckedShipTypeEmpty ? true : checkedShipType === ship.type);
     });
     dispatch(setFilteredShips(filteredShips));
