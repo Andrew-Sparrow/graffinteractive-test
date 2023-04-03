@@ -33,7 +33,6 @@ const App = () => {
   };
 
   useEffect(() => {
-    console.log(selectedShipPorts)
     const isInputShipNameValueEmpty = inputShipNameValue === '';
     const isSelectedShipPortsEmpty = selectedShipPorts.length === 0;
     const isCheckedShipTypeEmpty = checkedShipType === '';
