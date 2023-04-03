@@ -37,13 +37,12 @@ const PaginatedItems = () => {
 
   const items = useSelector(getFilteredShips);
 
-  const [currentItemsOnPage, setCurrentItemsOnPage] = useState(items);
+  const [currentItemsOnPage, setCurrentItemsOnPage] = useState([]);
   const [pageCount, setPageCount] = useState(0);
 
   const [itemOffset, setItemOffset] = useState(0);
 
   useEffect(() => {
-    setCurrentItemsOnPage(items);
     const endOffset = itemOffset + ITEMS_PER_PAGE;
     setCurrentItemsOnPage(items.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(items.length / ITEMS_PER_PAGE));

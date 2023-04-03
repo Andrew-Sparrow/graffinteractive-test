@@ -9,9 +9,9 @@ import { setFilteredShips } from '../../store/actions';
 import { PaginatedItems } from '../paginated-items/paginated-items';
 
 const options = [
-  // { value: 'Port Canaveral' },
-  { value: 'Port of Los Angeles' },
-  { value: 'Fort Lauderdale' }
+  { value: 'Port Canaveral' },
+  // { value: 'Port of Los Angeles' },
+  // { value: 'Fort Lauderdale' }
 ];
 
 const checkedRadio = '';
@@ -42,15 +42,12 @@ const App = () => {
 
     const formattedInputValue = inputShipNameValue.trim().toLowerCase()
     const filteredShips = ships.filter((ship) => {
-      if (isInputShipNameValueEmpty && isSelectedShipPortsEmpty && isCheckedShipTypeEmpty) {
-        return true;
-      } else {
-        return ship.name.toLowerCase().includes(formattedInputValue)
-          && (isSelectedShipPortsEmpty ? true : options.some((checkedItem) => checkedItem.value === ship.home_port));
-      }
+      return (isInputShipNameValueEmpty ? true : ship.name.toLowerCase().includes(formattedInputValue))
+        && (isSelectedShipPortsEmpty ? true : selectedShipPorts.some((checkedItem) => checkedItem.value === ship.home_port))
+        && (isCheckedShipTypeEmpty ? true : checkedShipType === ship.type);
     });
     dispatch(setFilteredShips(filteredShips));
-  }, [inputShipNameValue, selectedShipPorts]);
+  }, [inputShipNameValue, selectedShipPorts, checkedShipType]);
 
   const handleButtonFilterClick = (evt) => {
     setIsFilterOpen((prev) => !prev);
@@ -61,14 +58,14 @@ const App = () => {
       <h1 className={styles.title}>SpaceX Ships</h1>
       {
         isFilterOpen
-        ?
+          ?
           <Filters
             onClick={handleButtonFilterClick}
             handleChangeInputShipName={handleChangeInputShipName}
             handleChangeCheckedPorts={handleChangeCheckedPorts}
             inputValue={inputShipNameValue}
           />
-        :
+          :
           <ButtonFilterContainer
             isFilterOpen={isFilterOpen}
             onClick={handleButtonFilterClick}
