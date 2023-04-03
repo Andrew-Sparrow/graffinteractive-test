@@ -10,14 +10,17 @@ import { PaginatedItems } from '../paginated-items/paginated-items';
 
 const options = [
   // { value: 'Port Canaveral' },
-  // { value: 'Port of Los Angeles' },
+  { value: 'Port of Los Angeles' },
   { value: 'Fort Lauderdale' }
 ];
 
+const checkedRadio = '';
+
 const App = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const [inputValue, setInputValue] = useState('');
-  const [checkedPorts, setCheckedPorts] = useState([]);
+  const [inputShipNameValue, setInputShipNameValue] = useState('');
+  const [selectedShipPorts, setSelectedShipPorts] = useState(options);
+  const [checkedShipType, setCheckedShipTypes] = useState(checkedRadio);
 
   const dispatch = useDispatch();
   const ships = useSelector(getShips);
@@ -25,20 +28,29 @@ const App = () => {
   // filter input value stored here to remember its value after filter rerender
   const handleChangeInputShipName = (evt) => {
     const value = evt.target.value;
-    setInputValue(value);
+    setInputShipNameValue(value);
   };
 
   const handleChangeCheckedPorts = (evt) => {
-    console.log(evt.target);
+    console.log(evt.currentTarget);
   };
 
   useEffect(() => {
-    const formattedInputValue = inputValue.trim().toLowerCase()
+    const isInputShipNameValueEmpty = inputShipNameValue === '';
+    const isSelectedShipPortsEmpty = selectedShipPorts.length === 0;
+    const isCheckedShipTypeEmpty = checkedShipType === '';
+
+    const formattedInputValue = inputShipNameValue.trim().toLowerCase()
     const filteredShips = ships.filter((ship) => {
-      return ship.name.toLowerCase().includes(formattedInputValue) && options.some((checkedItem) => checkedItem.value === ship.home_port);
-      });
+      if (isInputShipNameValueEmpty && isSelectedShipPortsEmpty && isCheckedShipTypeEmpty) {
+        return true;
+      } else {
+        return ship.name.toLowerCase().includes(formattedInputValue)
+          && (isSelectedShipPortsEmpty ? true : options.some((checkedItem) => checkedItem.value === ship.home_port));
+      }
+    });
     dispatch(setFilteredShips(filteredShips));
-  }, [inputValue, options]);
+  }, [inputShipNameValue, selectedShipPorts]);
 
   const handleButtonFilterClick = (evt) => {
     setIsFilterOpen((prev) => !prev);
@@ -54,7 +66,7 @@ const App = () => {
             onClick={handleButtonFilterClick}
             handleChangeInputShipName={handleChangeInputShipName}
             handleChangeCheckedPorts={handleChangeCheckedPorts}
-            inputValue={inputValue}
+            inputValue={inputShipNameValue}
           />
         :
           <ButtonFilterContainer
