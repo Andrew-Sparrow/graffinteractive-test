@@ -22,8 +22,10 @@ const Filters = (props) => {
     onClick,
     handleChangeInputShipName,
     handleChangeCheckedPorts,
+    handleChangeCheckedShipType,
     inputValue,
-    selectedShipPorts
+    selectedShipPorts,
+    checkedShipType
   } = props;
 
   return (
@@ -46,7 +48,10 @@ const Filters = (props) => {
           handleChangeCheckedPorts={handleChangeCheckedPorts}
           selectedShipPorts={selectedShipPorts}
         />
-        <RadioBlock />
+        <RadioBlock
+          checkedShipType={checkedShipType}
+          handleChangeCheckedShipType={handleChangeCheckedShipType}
+        />
       </section>
     </aside>
   )

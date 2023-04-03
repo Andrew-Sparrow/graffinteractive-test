@@ -8,6 +8,7 @@ import { getShips } from '../../store/ships/selectors';
 import { setFilteredShips } from '../../store/actions';
 import { PaginatedItems } from '../paginated-items/paginated-items';
 
+// TODO перенести логику фильтрации в store
 
 const App = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -30,6 +31,10 @@ const App = () => {
     } else {
       setSelectedShipPorts((prev) => [...prev, value]);
     }
+  };
+
+  const handleChangeCheckedShipType = (value) => {
+    setCheckedShipTypes(value);
   };
 
   useEffect(() => {
@@ -61,8 +66,10 @@ const App = () => {
             onClick={handleButtonFilterClick}
             handleChangeInputShipName={handleChangeInputShipName}
             handleChangeCheckedPorts={handleChangeCheckedPorts}
+            handleChangeCheckedShipType={handleChangeCheckedShipType}
             inputValue={inputShipNameValue}
             selectedShipPorts={selectedShipPorts}
+            checkedShipType={checkedShipType}
           />
           :
           <ButtonFilterContainer
