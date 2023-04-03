@@ -34,12 +34,10 @@ const IconChevronRight = () => (
 const ITEMS_PER_PAGE = 5;
 
 const PaginatedItems = () => {
-
   const items = useSelector(getFilteredShips);
 
   const [currentItemsOnPage, setCurrentItemsOnPage] = useState([]);
   const [pageCount, setPageCount] = useState(0);
-
   const [itemOffset, setItemOffset] = useState(0);
 
   useEffect(() => {
@@ -47,7 +45,6 @@ const PaginatedItems = () => {
     setCurrentItemsOnPage(items.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(items.length / ITEMS_PER_PAGE));
   }, [items, itemOffset]);
-
 
   const handlePageClick = (event) => {
     const newOffset = event.selected * (ITEMS_PER_PAGE % items.length);
