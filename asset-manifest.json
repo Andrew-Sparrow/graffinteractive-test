@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/graffinteractive-test/static/css/main.13177278.css",
+    "main.js": "/graffinteractive-test/static/js/main.7f014136.js",
+    "static/media/CheckBox_Yes.svg": "/graffinteractive-test/static/media/CheckBox_Yes.66111ab71162a239836d642809c14981.svg",
+    "index.html": "/graffinteractive-test/index.html",
+    "static/media/Filters.svg": "/graffinteractive-test/static/media/Filters.bd61ead80308963ae9bc153287b5084c.svg",
+    "static/media/CheckBox_No.svg": "/graffinteractive-test/static/media/CheckBox_No.50ad23cb79fe11b79764c393978a48bb.svg",
+    "static/media/Arrow_Left.svg": "/graffinteractive-test/static/media/Arrow_Left.8ddbc8bc2bdadd65e5c88b9565d3598a.svg",
+    "static/media/Chevron_Right.svg": "/graffinteractive-test/static/media/Chevron_Right.28ecbb69eab7ef3ce6fb38ea36be1732.svg",
+    "static/media/Chevron_Left.svg": "/graffinteractive-test/static/media/Chevron_Left.7800505ef605ca0331c4e1110dd25aec.svg",
+    "static/media/RadioButton_Yes.svg": "/graffinteractive-test/static/media/RadioButton_Yes.99c5712f7c7acaeab83dd701576276f9.svg",
+    "static/media/RadioButton_No.svg": "/graffinteractive-test/static/media/RadioButton_No.ca7e00334f451f9c54fb3713c75ac268.svg",
+    "main.13177278.css.map": "/graffinteractive-test/static/css/main.13177278.css.map",
+    "main.7f014136.js.map": "/graffinteractive-test/static/js/main.7f014136.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.13177278.css",
+    "static/js/main.7f014136.js"
+  ]
+}
