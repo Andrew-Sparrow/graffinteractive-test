@@ -4,7 +4,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 
 import './styles/index.scss';
-import { App } from './components/main/main';
+import { App } from './components/app/app';
 import rootReducer from './store/root-reducer';
 import { getAxiosInstance } from './services/api';
 import { fetchShipsList } from './store/api-actions';

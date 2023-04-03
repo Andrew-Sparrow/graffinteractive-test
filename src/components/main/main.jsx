@@ -84,4 +84,4 @@ const Main = () => {
   );
 };
 
-export { Main as App };
+export { Main };

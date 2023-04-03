@@ -4,11 +4,10 @@ import {
   Route,
 } from "react-router-dom";
 
-import './App.css';
-import Main from '../main/main';
+import { Main } from '../main/main';
 import { Details } from "../details/details";
 import { AppRoute } from '../../const';
-import NotFound from '../not-found/not-found';
+import { NotFound } from '../not-found/not-found';
 import { useDispatch } from 'react-redux';
 import { setItemsAction } from "../../store/actions";
 
@@ -31,4 +30,4 @@ function App() {
   );
 }
 
-export default App;
+export { App };
