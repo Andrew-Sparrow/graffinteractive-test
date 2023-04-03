@@ -8,7 +8,7 @@ import { getShips } from '../../store/ships/selectors';
 import { setFilteredShips } from '../../store/actions';
 import { PaginatedItems } from '../paginated-items/paginated-items';
 
-const options = [
+const selectedOptions = [
   { value: 'Port Canaveral' },
   // { value: 'Port of Los Angeles' },
   // { value: 'Fort Lauderdale' }
@@ -19,7 +19,7 @@ const checkedRadio = '';
 const App = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [inputShipNameValue, setInputShipNameValue] = useState('');
-  const [selectedShipPorts, setSelectedShipPorts] = useState(options);
+  const [selectedShipPorts, setSelectedShipPorts] = useState(selectedOptions);
   const [checkedShipType, setCheckedShipTypes] = useState(checkedRadio);
 
   const dispatch = useDispatch();

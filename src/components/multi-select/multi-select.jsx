@@ -42,7 +42,7 @@ const MultiSelect = (props) => {
 
   const onClickOutsideHandler = () => {
     setIsSelectOpen(false);
-  }
+  };
 
   const onSelectedItemClick = (value) => {
     if (selectedValues.includes(value)) {
