@@ -53,7 +53,7 @@ const MultiSelect = (props) => {
 
   return (
     <>
-      <label className={filterStyles.label} htmlFor="port">Порт</label>
+      <h3 className={filterStyles.name} >Порт</h3>
       <OutsideAlerter onClickSelectHandle={onClickOutsideHandler}>
         <div className={multiSelectStyles.select_wrapper}>
           <div className={multiSelectStyles.select} tabIndex="1" onClick={onClickSelectHandler} id="port" >

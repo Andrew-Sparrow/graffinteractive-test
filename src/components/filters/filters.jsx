@@ -33,12 +33,11 @@ const Filters = (props) => {
         <h2 className={styles.title}>Фильтры</h2>
       </div>
       <section className={styles.filters_box}>
-        <label className={styles.label} htmlFor="name">Название</label>
+        <h3 className={styles.name}>Название</h3>
         <div className={styles.input_wrapper}>
           <input
             className={styles.input} // TODO add styles for active and inactive state for string style
             type="text"
-            id="name"
             onChange={handleChangeInputShipName}
             value={inputValue}
           />

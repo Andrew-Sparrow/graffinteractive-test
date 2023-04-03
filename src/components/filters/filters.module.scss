@@ -4,7 +4,6 @@
   width: 320px;
   color: $white;
   background-color: $dark-gray-bg;
-  min-height: 658px;
   padding-left: 8px;
   padding-right: 8px;
   padding-top: 32px;
@@ -37,15 +36,17 @@
 
 .filters_box {
   border: none;
+  padding-bottom: 30px;
 }
 
-.label {
+.name {
   width: 66px;
   color: $color-label;
-  margin-bottom: 4px;
   font-size: 14px;
-  line-height: 20px;
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
+  line-height: 20px;
+  margin: 0;
   margin-left: 3px;
 }
 
