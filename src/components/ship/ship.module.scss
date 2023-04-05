@@ -1,15 +1,20 @@
 @import "../../styles/variables.scss";
 
 .ship {
-  width: 304px;
-  min-height: 153px;
-  background-color: $dark-gray-bg;
-  border-radius: 8px;
-  margin-bottom: 8px;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  color: $white;
+  text-decoration: none;
+
+  &__item {
+    width: 304px;
+    min-height: 153px;
+    background-color: $dark-gray-bg;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
 
   &__title {
     font-weight: 500;
@@ -21,5 +26,6 @@
     display: inline-block;
     width: 40px;
     margin-right: 24px;
+    color: $color-detail-name;
   }
 }

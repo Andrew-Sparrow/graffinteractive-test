@@ -4,7 +4,7 @@
   background-color: #262732;
 }
 
-.main {
+.detail {
   width: 320px;
   color: $white;
   margin-left: auto;
@@ -16,9 +16,36 @@
   padding-left: 8px;
   padding-right: 8px;
 
-  .title {
+  &__title {
     font-size: 32px;
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 32px;
+    text-align: start;
+  }
+
+  &__info {
+    display: flex;
+    text-align: start;
+    height: 23px;
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 16px;
+    color: $white;
+    margin: 0;
+    margin-bottom: 16px;
+  }
+
+  &__name {
+    width: 65px;
+    color: $color-detail-name;
+  }
+
+  &__missions {
+    text-align: start;
+  }
+
+  &__launches {
+    margin-top: 8px;
+    display: block;
   }
 }

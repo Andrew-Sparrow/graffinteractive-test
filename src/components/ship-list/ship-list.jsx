@@ -21,6 +21,7 @@ const ShipList = ({ currentItems }) => {
       {
         currentItems && currentItems.map((ship) =>
           <Ship
+            id={ship.id}
             key={ship.id}
             type={ship.type}
             name={ship.name}

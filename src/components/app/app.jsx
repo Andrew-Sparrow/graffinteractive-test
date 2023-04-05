@@ -14,6 +14,7 @@ import { setItemsAction } from "../../store/actions";
 function App() {
   // const dispatch = useDispatch();
 
+  // TODO
   // if (!localStorage.getItem('books')) {
   //   localStorage.setItem('books', JSON.stringify(books));
   //   dispatch(setItemsAction(books))
