@@ -7,7 +7,7 @@ import {
 const initialState = {
   ships: [],
   filteredShips: [],
-  isDataLoaded: false,
+  isDataLoading: true,
 };
 
 const ships = createReducer(initialState, (builder) => {
@@ -15,7 +15,7 @@ const ships = createReducer(initialState, (builder) => {
     .addCase(loadShips, (state, action) => {
       state.ships = action.payload;
       state.filteredShips = action.payload;
-      state.isDataLoaded = true;
+      state.isDataLoading = false;
     })
     .addCase(setFilteredShips, (state, action) => {
       state.filteredShips = action.payload;

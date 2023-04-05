@@ -1,16 +1,16 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { getIsDataLoaded } from '../../store/ships/selectors';
+import { getIsShipsLoading } from '../../store/ships/selectors';
 import { Ship } from '../ship/ship';
 import { LoadingScreen } from '../loading-screen/loading-screen';
 import styles from './ship-list.module.scss';
 
 
 const ShipList = ({ currentItems }) => {
-  const isDataLoaded = useSelector(getIsDataLoaded);
+  const isShipsLoading = useSelector(getIsShipsLoading);
 
-  if (!isDataLoaded) {
+  if (isShipsLoading) {
     return (
       <LoadingScreen />
     );
