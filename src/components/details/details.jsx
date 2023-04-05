@@ -32,7 +32,7 @@ const Details = () => {
     return () => {
       dispatch(removeLaunches());
     }
-  }, [isShipsLoading, isLaunchesLoading])
+  }, [isShipsLoading])
 
   return (
     <div className={styles.app}>
@@ -46,16 +46,18 @@ const Details = () => {
               <p className={styles.detail__info}><span className={styles.detail__name}>Вес</span>{ship?.mass_kg} кг</p>
               <p className={styles.detail__info}><span className={styles.detail__name}>Порт</span>{ship?.home_port}</p>
               <p className={styles.detail__info}><span className={styles.detail__name}>Год</span>{ship?.year_built}</p>
-              <p className={styles.detail__missions}>
+              <div className={styles.detail__missions}>
                 <span className={styles.detail__name}>Миссии</span>
                 <span className={styles.detail__launches}>
                   {
                     isLaunchesLoading
                       ? <LoadingScreen />
-                      :  launchNames?.map((item) => `${ item }, `)
+                      : launchNames?.map((item, index) => {
+                        return index !== launchNames.length - 1 ? `${ item }, ` : `${ item }`
+                      })
                   }
                 </span>
-              </p>
+              </div>
             </>
           // {ship.launches.map((launchId) => <p key={launchId}>{launchId}</p>)}
         }
