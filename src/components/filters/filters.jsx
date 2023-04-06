@@ -36,7 +36,7 @@ const Filters = (props) => {
   return (
     <aside className={styles.filters} >
       <div className={styles.title_container}>
-        {isDesktop ?? <IconArrowLeft onClick={onClick} />}
+        {!isDesktop && <IconArrowLeft onClick={onClick} />}
         <h2 className={styles.title}>Фильтры</h2>
       </div>
       <section className={styles.filters_box}>

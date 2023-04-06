@@ -1,7 +1,6 @@
 import React from 'react';
 import { HandySvg } from 'handy-svg';
 import iconFilterSVG from '../../img/icons/Filters.svg';
-import { useMediaQuery } from 'react-responsive';
 
 import styles from './button-filter-container.module.scss';
 
@@ -16,10 +15,6 @@ const IconFilter = () => (
 
 const ButtonFilterContainer = (props) => {
   const { onClick } = props;
-
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1920px)'
-  })
 
   return (
     <div>
