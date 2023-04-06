@@ -15,8 +15,10 @@ const Ship = (props) => {
     <Link to={`/ship/${ id }`} className={styles.ship}>
       <li className={styles.ship__item}>
         <h2 className={styles.ship__title}>{name}</h2>
-        <p className={styles.ship__paragraph}><span className={styles.ship__detail}>Тип</span>{type}</p>
-        <p className={styles.ship__paragraph}><span className={styles.ship__detail}>Порт</span>{port}</p>
+        <div className={styles.ship__wrapper}>
+          <p className={styles.ship__paragraph}><span className={styles.ship__detail}>Тип</span>{type}</p>
+          <p className={styles.ship__paragraph}><span className={styles.ship__detail}>Порт</span>{port}</p>
+        </div>
       </li>
     </Link >
   )

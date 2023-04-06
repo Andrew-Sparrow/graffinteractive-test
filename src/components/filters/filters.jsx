@@ -31,7 +31,7 @@ const Filters = (props) => {
 
   const isDesktop = useMediaQuery({
     query: '(min-width: 1920px)'
-  })
+  });
 
   return (
     <aside className={styles.filters} >

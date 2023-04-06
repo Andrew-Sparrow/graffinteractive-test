@@ -14,7 +14,7 @@
     padding-right: 24px;
     padding-top: 24px;
     padding-bottom: 24px;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     margin-top: 8px;
   }
 
@@ -45,5 +45,19 @@
 @media (min-width: $tablet-width) {
   .ship__item {
     width: 100%;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .ship {
+    &__detail {
+      width: fit-content;
+    }
+
+    &__wrapper {
+      justify-content: space-between;
+      width: 396px;
+      display: flex;
+    }
   }
 }
