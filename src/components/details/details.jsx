@@ -62,10 +62,16 @@ const Details = () => {
             ? < LoadingScreen />
             : <>
               <h2 className={styles.detail__title}>{ship?.name}</h2>
-              <p className={styles.detail__info}><span className={styles.detail__name}>Тип</span>{ship?.type}</p>
-              <p className={styles.detail__info}><span className={styles.detail__name}>Вес</span>{ship?.mass_kg} кг</p>
-              <p className={styles.detail__info}><span className={styles.detail__name}>Порт</span>{ship?.home_port}</p>
-              <p className={styles.detail__info}><span className={styles.detail__name}>Год</span>{ship?.year_built}</p>
+              <div className={styles.detail__properties}>
+                <div className={styles.detail_box}>
+                  <p className={styles.detail__info}><span className={styles.detail__name}>Тип</span>{ship?.type}</p>
+                  <p className={styles.detail__info}><span className={styles.detail__name}>Вес</span>{ship?.mass_kg} кг</p>
+                </div>
+                <div className={styles.detail_box}>
+                  <p className={styles.detail__info}><span className={styles.detail__name}>Порт</span>{ship?.home_port}</p>
+                  <p className={styles.detail__info}><span className={styles.detail__name}>Год</span>{ship?.year_built}</p>
+                </div>
+              </div>
               <div className={styles.detail__missions}>
                 <span className={styles.detail__name}>Миссии</span>
                 <span className={styles.detail__launches}>
