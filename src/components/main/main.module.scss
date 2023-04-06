@@ -33,3 +33,13 @@
     }
   }
 }
+
+@media (min-width: $desktop-width) {
+  .app {
+    width: 1920px;
+  }
+
+  .main {
+
+  }
+}

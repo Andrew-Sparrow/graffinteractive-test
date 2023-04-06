@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useMediaQuery } from 'react-responsive';
 
 import styles from './main.module.scss';
 import { Filters } from '../filters/filters';
@@ -18,6 +19,10 @@ const Main = () => {
 
   const dispatch = useDispatch();
   const ships = useSelector(getShips);
+
+  const isDesktop = useMediaQuery({
+    query: '(min-width: 1920px)'
+  })
 
   // filter input value stored here to remember its value after filter rerender
   const handleChangeInputShipName = (evt) => {
@@ -58,6 +63,7 @@ const Main = () => {
 
   return (
     <div className={styles.app}>
+      {isDesktop ? <h2>Descktop</h2> : '' }
       <h1 className={styles.title}>SpaceX Ships</h1>
       {
         isFilterOpen
