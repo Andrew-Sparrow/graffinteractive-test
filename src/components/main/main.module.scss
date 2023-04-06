@@ -37,9 +37,25 @@
 @media (min-width: $desktop-width) {
   .app {
     width: 1920px;
-  }
+    padding-top: 0;
 
-  .main {
+    .main {
+      width: 1528px;
+      padding-left: 72px;
+      padding-right: 72px;
+    }
 
+    .title {
+      padding-top: 56px;
+      padding-left: 0;
+      padding-right: 0;
+      margin: 0;
+      margin-left: 72px;
+      margin-bottom: 40px;
+    }
+
+    &__wrapper {
+      display: flex;
+    }
   }
 }

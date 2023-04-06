@@ -63,11 +63,15 @@ const Main = () => {
 
   return (
     <div className={styles.app}>
-      {isDesktop ? <h2>Descktop</h2> : '' }
-      <h1 className={styles.title}>SpaceX Ships</h1>
-      {
-        isFilterOpen
-          ?
+      {isDesktop
+        ?
+        <div className={styles.app__wrapper}>
+          <div>
+            <h1 className={styles.title}>SpaceX Ships</h1>
+            <main className={styles.main}>
+              <PaginatedItems />
+            </main>
+          </div>
           <Filters
             onClick={handleButtonFilterClick}
             handleChangeInputShipName={handleChangeInputShipName}
@@ -77,15 +81,32 @@ const Main = () => {
             selectedShipPorts={selectedShipPorts}
             checkedShipType={checkedShipType}
           />
-          :
-          <ButtonFilterContainer
-            isFilterOpen={isFilterOpen}
-            onClick={handleButtonFilterClick}
-          />
+        </div>
+        :
+        <>
+          <h1 className={styles.title}>SpaceX Ships</h1>
+          {isFilterOpen
+            ?
+            <Filters
+              onClick={handleButtonFilterClick}
+              handleChangeInputShipName={handleChangeInputShipName}
+              handleChangeCheckedPorts={handleChangeCheckedPorts}
+              handleChangeCheckedShipType={handleChangeCheckedShipType}
+              inputValue={inputShipNameValue}
+              selectedShipPorts={selectedShipPorts}
+              checkedShipType={checkedShipType}
+            />
+            :
+            <ButtonFilterContainer
+              isFilterOpen={isFilterOpen}
+              onClick={handleButtonFilterClick}
+            />
+          }
+          <main className={styles.main}>
+            <PaginatedItems />
+          </main>
+        </>
       }
-      <main className={styles.main}>
-        <PaginatedItems />
-      </main>
     </div>
   );
 };
