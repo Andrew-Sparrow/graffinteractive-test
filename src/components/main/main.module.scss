@@ -8,7 +8,6 @@
   background-color: $black;
   padding-top: 32px;
 
-
   .main,
   .title {
     padding-left: 8px;
@@ -19,5 +18,18 @@
     font-size: 32px;
     font-weight: 500;
     margin-bottom: 21px;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .app {
+    width: 768px;
+    box-sizing: border-box;
+
+    .main,
+    .title {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
 }

@@ -86,3 +86,11 @@
     $color-gradient-second
   );
 }
+
+@media (min-width: $tablet-width) {
+  .filters {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
