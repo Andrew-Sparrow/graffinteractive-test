@@ -95,3 +95,10 @@
     margin-bottom: 0;
   }
 }
+
+@media (min-width: $desktop-width) {
+  .filters {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}

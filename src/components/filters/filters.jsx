@@ -1,5 +1,6 @@
 import React from 'react';
 import { HandySvg } from 'handy-svg';
+import { useMediaQuery } from 'react-responsive';
 
 import styles from './filters.module.scss';
 import iconArrowLeftSVG from '../../img/icons/Arrow_Left.svg';
@@ -28,10 +29,14 @@ const Filters = (props) => {
     checkedShipType
   } = props;
 
+  const isDesktop = useMediaQuery({
+    query: '(min-width: 1920px)'
+  })
+
   return (
     <aside className={styles.filters} >
       <div className={styles.title_container}>
-        <IconArrowLeft onClick={onClick} />
+        {isDesktop ?? <IconArrowLeft onClick={onClick} />}
         <h2 className={styles.title}>Фильтры</h2>
       </div>
       <section className={styles.filters_box}>
