@@ -19,7 +19,6 @@ export const fetchLaunchesList = (launchIDs) => (dispatch, _getState, api) => {
   Promise.all(requests)
     .then((values) => {
       const launchNames = values.map((items) => items.data.name);
-      console.log(launchNames);
       dispatch(loadLaunchNames(launchNames));
     });
 };

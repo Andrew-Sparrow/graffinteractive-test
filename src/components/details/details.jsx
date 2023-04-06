@@ -1,15 +1,26 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { HandySvg } from 'handy-svg';
 
 import styles from './details.module.scss';
 import { fetchLaunchesList } from '../../store/api-actions';
-
+import iconArrowLeftSVG from '../../img/icons/Arrow_Left.svg';
 import { removeLaunches } from '../../store/actions';
 import { getShips } from '../../store/ships/selectors';
 import { getLaunches, getIsLaunchesLoading } from '../../store/launches/selectors';
 import { getIsShipsLoading } from '../../store/ships/selectors';
 import { LoadingScreen } from '../loading-screen/loading-screen';
+
+const IconArrowLeft = ({ onClick }) => (
+  <HandySvg
+    className={styles.button}
+    src={iconArrowLeftSVG}
+    width="24"
+    height="24"
+    onClick={onClick}
+  />
+);
 
 
 const Details = () => {
@@ -37,6 +48,14 @@ const Details = () => {
   return (
     <div className={styles.app}>
       <div className={styles.detail}>
+        <button
+          className={styles.detail__button}
+          type='button'
+          onClick={() => console.log('first')}
+        >
+          <IconArrowLeft />
+          Вернуться
+        </button>
         {
           isShipsLoading
             ? < LoadingScreen />
@@ -59,7 +78,6 @@ const Details = () => {
                 </span>
               </div>
             </>
-          // {ship.launches.map((launchId) => <p key={launchId}>{launchId}</p>)}
         }
       </div>
     </div>

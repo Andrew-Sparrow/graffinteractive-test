@@ -1,6 +1,7 @@
 @import "../../styles/variables.scss";
 
 .app {
+  // background-color: $black;
   background-color: #262732;
 }
 
@@ -12,7 +13,6 @@
   background-color: $black;
   padding-top: 32px;
   height: 100vh;
-  text-align: center;
   padding-left: 8px;
   padding-right: 8px;
 
@@ -51,5 +51,19 @@
     font-size: 16px;
     color: $white;
     margin-top: 8px;
+  }
+
+  &__button {
+    display: flex;
+    width: 124px;
+    background-color: $black;
+    border: none;
+    color: $white;
+    padding: 4px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
   }
 }
