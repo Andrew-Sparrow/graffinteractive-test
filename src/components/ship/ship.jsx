@@ -11,7 +11,6 @@ const Ship = (props) => {
     port,
   } = props;
 
-  // TODO перенос по словам
   return (
     <Link to={`/ship/${ id }`} className={styles.ship}>
       <li className={styles.ship__item}>
