@@ -19,14 +19,17 @@ const ShipList = ({ currentItems }) => {
   return (
     <ul className={styles.list}>
       {
-        currentItems && currentItems.map((ship) =>
+        currentItems.length > 0
+          ? currentItems.map((ship) =>
           <Ship
             id={ship.id}
             key={ship.id}
             type={ship.type}
             name={ship.name}
             port={ship.home_port}
-          />)
+            />)
+          :
+          <p style={{textAlign: 'center'}}>There are no ships to show</p>
       }
     </ul>
   )
