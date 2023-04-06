@@ -50,6 +50,14 @@
 
 @media (min-width: $tablet-width) {
   .ship {
+    &__item {
+      padding-left: 32px;
+      padding-right: 32px;
+      padding-top: 32px;
+      padding-bottom: 32px;
+      margin-top: 16px;
+    }
+
     &__detail {
       width: fit-content;
     }
